@@ -14,10 +14,17 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // State field(s) for passwordConfirm widget.
+  FocusNode? passwordConfirmFocusNode;
+  TextEditingController? passwordConfirmTextController;
+  late bool passwordConfirmVisibility;
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
+    passwordConfirmVisibility = false;
   }
 
   @override
@@ -27,5 +34,8 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+
+    passwordConfirmFocusNode?.dispose();
+    passwordConfirmTextController?.dispose();
   }
 }
