@@ -1,4 +1,4 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/circular_icon_button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -63,30 +63,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
           ),
           actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
-              child: Container(
-                width: 50.0,
-                height: 50.0,
-                decoration: const BoxDecoration(
-                  color: Color(0xFFECE4E2),
-                  shape: BoxShape.circle,
-                ),
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: FlutterFlowIconButton(
-                    borderRadius: 8.0,
-                    buttonSize: 40.0,
-                    icon: Icon(
-                      Icons.settings,
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      size: 24.0,
-                    ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                  ),
+            wrapWithModel(
+              model: _model.circularIconButtonModel,
+              updateCallback: () => safeSetState(() {}),
+              child: const CircularIconButtonWidget(
+                icon: Icon(
+                  Icons.notifications_rounded,
                 ),
               ),
             ),
@@ -682,6 +664,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('ItineraryPage');
+                  },
+                  text: 'Plan My Trip',
+                  options: FFButtonOptions(
+                    width: MediaQuery.sizeOf(context).width * 0.9,
+                    height: 50.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: const Color(0xFF5A4FCF),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Inter',
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                    elevation: 3.0,
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
                 ),
               ),
