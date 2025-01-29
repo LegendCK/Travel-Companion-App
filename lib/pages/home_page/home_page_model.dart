@@ -1,3 +1,4 @@
+import '/components/circular_icon_button_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
@@ -5,6 +6,8 @@ import 'package:flutter/material.dart';
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Model for CircularIconButton component.
+  late CircularIconButtonModel circularIconButtonModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -21,10 +24,14 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   String? Function(BuildContext, String?)? textController3Validator;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    circularIconButtonModel =
+        createModel(context, () => CircularIconButtonModel());
+  }
 
   @override
   void dispose() {
+    circularIconButtonModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
