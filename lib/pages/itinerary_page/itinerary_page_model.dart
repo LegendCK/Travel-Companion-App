@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 class ItineraryPageModel extends FlutterFlowModel<ItineraryPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for CircularIconButton component.
-  late CircularIconButtonModel circularIconButtonModel;
   // Model for weatherDetails component.
   late WeatherDetailsModel weatherDetailsModel1;
   // Model for weatherDetails component.
@@ -17,23 +15,25 @@ class ItineraryPageModel extends FlutterFlowModel<ItineraryPageWidget> {
   late WeatherDetailsModel weatherDetailsModel3;
   // Model for weatherDetails component.
   late WeatherDetailsModel weatherDetailsModel4;
+  // Model for CircularIconButton component.
+  late CircularIconButtonModel circularIconButtonModel;
 
   @override
   void initState(BuildContext context) {
-    circularIconButtonModel =
-        createModel(context, () => CircularIconButtonModel());
     weatherDetailsModel1 = createModel(context, () => WeatherDetailsModel());
     weatherDetailsModel2 = createModel(context, () => WeatherDetailsModel());
     weatherDetailsModel3 = createModel(context, () => WeatherDetailsModel());
     weatherDetailsModel4 = createModel(context, () => WeatherDetailsModel());
+    circularIconButtonModel =
+        createModel(context, () => CircularIconButtonModel());
   }
 
   @override
   void dispose() {
-    circularIconButtonModel.dispose();
     weatherDetailsModel1.dispose();
     weatherDetailsModel2.dispose();
     weatherDetailsModel3.dispose();
     weatherDetailsModel4.dispose();
+    circularIconButtonModel.dispose();
   }
 }
