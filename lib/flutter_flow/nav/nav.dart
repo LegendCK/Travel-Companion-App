@@ -74,16 +74,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const HomePageWidget()
-          : const CreateAccountPageWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const HomePageWidget() : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomePageWidget()
-              : const CreateAccountPageWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const HomePageWidget() : const LoginPageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -104,14 +102,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const BudgetPageWidget(),
         ),
         FFRoute(
-          name: 'CreateAccountPage',
-          path: '/createAccountPage',
-          builder: (context, params) => const CreateAccountPageWidget(),
-        ),
-        FFRoute(
           name: 'loginPage',
           path: '/loginPage',
           builder: (context, params) => const LoginPageWidget(),
+        ),
+        FFRoute(
+          name: 'createAccountPage',
+          path: '/createAccountPage',
+          builder: (context, params) => const CreateAccountPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -282,7 +280,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/createAccountPage';
+            return '/loginPage';
           }
           return null;
         },
