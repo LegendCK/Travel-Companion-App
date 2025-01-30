@@ -12,7 +12,6 @@ The Travel Companion App is designed to simplify trip planning and execution by 
 - **Accommodation & Meal Tracking** – Users can manage check-ins, check-outs, and meal schedules.
 - **Budget Tracking** – Monitors expenses with a progress indicator for budget utilization.
 - **Offline Support** – Cached itinerary details for access without internet.
-- **Landing Page** – A web-based landing page built with React for showcasing the app.
 
 ## Technologies Used
 FlutterFlow, Firebase Firestore, Firebase Authentication, Google Cloud Functions, OpenWeather API, Google Maps API, Gemini API.
@@ -31,7 +30,6 @@ FlutterFlow, Firebase Firestore, Firebase Authentication, Google Cloud Functions
 ### Login/SignUp Page
 ![Screenshot 2025-01-30 060637](https://github.com/user-attachments/assets/d1029091-f8cd-4377-b044-042146d1d28d)
 ![Screenshot 2025-01-30 060617](https://github.com/user-attachments/assets/8c9de776-5409-40f5-8c98-15fe33164156)
-
 
 ## How to Run the Project
 ### Mobile App
